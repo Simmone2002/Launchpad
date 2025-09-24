@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ATS-proof resume: a simple layout that works • LaunchPad for GenZ</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="../index.html">LaunchPad<span>for</span>GenZ</a>
+      <a href="../index.html">Home</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../resources.html">Resources</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container blog-post">
+    <img class="post-hero" src="../images/resume.jpg" alt="ATS-proof resume">
+
+    <h1>ATS-proof resume: a simple layout that works</h1>
+    <p class="post-meta">Sep 23, 2025 • <span class="pill">Resumes</span> <span class="pill">AI Hacks</span></p>
+
+    <article>
+      <p>Applicant Tracking Systems (ATS) scan for structure and keywords. Your goal is a clean document the machine can parse and a human can skim in 7–10 seconds. Here’s a layout that consistently works, plus prompts and checklists.</p>
+
+      <h2>The layout (one page)</h2>
+      <ul>
+        <li><strong>Header:</strong> Name • City • Email • Phone • LinkedIn • Portfolio</li>
+        <li><strong>Summary (2–3 lines):</strong> Role + niche + 1–2 proof points (numbers)</li>
+        <li><strong>Skills:</strong> Tools + core skills that match the job ad wording</li>
+        <li><strong>Experience:</strong> Reverse-chronological. Each role: 2–4 impact bullets</li>
+        <li><strong>Education/Certs:</strong> Degree, date; relevant certs</li>
+      </ul>
+
+      <h2>Bullet formula + examples</h2>
+      <blockquote>Action verb + what you did + how + result (with a number)</blockquote>
+      <ul>
+        <li>Increased email CTR from 2.1% to 3.8% by testing 12 subject lines and segmenting new users.</li>
+        <li>Reduced support tickets 22% by launching a 10-article self-serve help center.</li>
+        <li>Shipped onboarding redesign that cut time-to-value from 3 days to 1.2 days.</li>
+      </ul>
+
+      <h2>Keyword matching (without keyword stuffing)</h2>
+      <p>Copy the job ad into an LLM and ask: “List the top 10 hard skills/tools the ad expects.” Mirror exact wording if you have the skill (e.g., “Figma,” not “design tool”). Place in <em>Skills</em> and the most relevant bullets.</p>
+
+      <h2>Formatting rules so ATS doesn’t choke</h2>
+      <ul>
+        <li>Use standard headings: <em>Experience, Skills, Education</em>.</li>
+        <li>No text in images. Avoid tables for core content.</li>
+        <li>File name: <code>Firstname_Lastname_Resume.pdf</code>. Export PDF unless asked for DOCX.</li>
+        <li>Body font 10.5–11.5pt; consistent margins; simple bullets.</li>
+      </ul>
+
+      <h2>LLM prompts that actually help</h2>
+      <h3>Rewrite bullets for impact</h3>
+      <pre>Rewrite these resume bullets with action verbs + numbers where possible.
+Keep each to one line. Remove fluff. Output as a list.
+[PASTE YOUR RAW BULLETS HERE]</pre>
+
+      <h3>Tailor to a job ad</h3>
+      <pre>Here is the job description: [PASTE JD]
+Here is my resume text: [PASTE RESUME]
+Suggest 6 specific bullet edits so my resume aligns with the JD language (no exaggeration).
+Return only the revised bullets and the JD keywords you matched.</pre>
+
+      <h2>Final skim test (60 seconds)</h2>
+      <ul>
+        <li>Can I identify your role, niche, and proof points in 10 seconds?</li>
+        <li>Do 3+ bullets show numbers or clear outcomes?</li>
+        <li>Do your skills match the JD terms?</li>
+        <li>Are links (LinkedIn/Portfolio) clickable and current?</li>
+      </ul>
+    </article>
+
+    <div class="post-nav">
+      <a href="../blog.html" class="btn ghost">← Back to Blog</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo-sm">LaunchPad<span>for</span>GenZ</div>
+        <p class="muted">Practical, career-smart tips for resumes, interviews, and job hunt systems.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="../index.html">Home</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../resources.html">Resources</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="tiny">© 2025 LaunchPad for GenZ</div>
+    </div>
+  </footer>
+</body>
+</html>
+
+
+
+  

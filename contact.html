@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact • LaunchPad for GenZ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Nav -->
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="index.html">LaunchPad<span>for</span>GenZ</a>
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero container">
+      <h1>Say hi 👋</h1>
+      <p class="muted">Questions, collabs, or feedback? Drop a note and I’ll get back to you.</p>
+    </section>
+  </header>
+
+  <main class="container section">
+
+    <!-- Promo bar -->
+    <div class="promo">
+      <div>
+        <h2 class="promo-title">Need a 30 min consultation?</h2>
+        <p class="muted">Resume review, portfolio critique, or mock interview. Tell me what you need and I will reply with times.</p>
+      </div>
+      <a class="btn primary" href="#contact-form">Request a time</a>
+    </div>
+  
+    <div class="contact-wrap">
+      <!-- Left: Form -->
+      <form class="card contact-card" action="https://formspree.io/f/xblzjwqr" method="POST" id="contact-form">
+        <input type="text" name="_gotcha" style="display:none">
+  
+        <div class="form-grid">
+          <label class="field">
+            <span>Name</span>
+            <input class="input" type="text" name="name" placeholder="Your name" required>
+          </label>
+  
+          <label class="field">
+            <span>Email</span>
+            <input class="input" type="email" name="email" placeholder="you@email.com" required>
+          </label>
+  
+          <label class="field field-full">
+            <span>How can I help?</span>
+            <textarea class="textarea" name="message" rows="6" placeholder="Example: 30 min consult for resume and LinkedIn. Target role: Product Designer." required></textarea>
+          </label>
+  
+          <label class="field field-full">
+            <span>Links (optional)</span>
+            <input class="input" type="text" name="links" placeholder="LinkedIn, portfolio, resume URL">
+          </label>
+        </div>
+  
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Send message</button>
+          <span class="muted tiny">Protected by Formspree</span>
+        </div>
+      </form>
+  
+      <!-- Right: Side info -->
+      <aside class="card contact-side">
+        <h3>Ways I can help</h3>
+        <ul class="list-check muted">
+          <li>Resume rewrite with measurable bullets</li>
+          <li>Cover letter draft that sounds like you</li>
+          <li>Mock interview with feedback</li>
+          <li>Portfolio and case study review</li>
+          <li>Weekly job search plan</li>
+        </ul>
+  
+        <h3>Response time</h3>
+        <p class="muted">Usually within 24 to 48 hours.</p>
+  
+        <h3>What to include</h3>
+        <ul class="muted">
+          <li>Goal and target role</li>
+          <li>Any deadlines</li>
+          <li>Relevant links</li>
+        </ul>
+  
+        <h3>Follow along</h3>
+        <div class="links">
+          <a class="link" href="#" target="_blank" rel="noopener">TikTok</a> ·
+          <a class="link" href="#" target="_blank" rel="noopener">Instagram</a> ·
+          <a class="link" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </aside>
+    </div>
+  
+    <!-- Success + error boxes -->
+    <div id="contact-success" class="notice success" style="display:none;">
+      <strong>Thanks!</strong> Your message was sent. I will reply soon.
+    </div>
+    <div id="contact-error" class="notice error" style="display:none;">
+      <strong>Oops.</strong> Something went wrong. Please try again later.
+    </div>
+  </main>
+  
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo-sm">LaunchPad<span>for</span>GenZ</div>
+        <p class="muted">Practical, AI-smart career tips for resumes, interviews, and job hunt systems.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <div class="tiny">© 2025 LaunchPad for GenZ</div>
+    </div>
+  </footer>
+
+  <!-- Inline success (no redirect) -->
+  <script>
+    (function() {
+      const form = document.getElementById('contact-form');
+      const ok = document.getElementById('contact-success');
+      const err = document.getElementById('contact-error');
+      if (!form) return;
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        ok.style.display = 'none';
+        err.style.display = 'none';
+
+        const data = new FormData(form);
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) { form.reset(); ok.style.display = 'block'; }
+          else { err.style.display = 'block'; }
+        } catch {
+          err.style.display = 'block';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
+
