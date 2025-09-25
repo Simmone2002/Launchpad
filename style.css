@@ -730,3 +730,72 @@ p.muted, .muted{ color:#aaa; }
   .value-grid,.feature-grid,.faq-grid{ grid-template-columns:1fr; }
   .cta-wide{ flex-direction:column; align-items:flex-start; }
 }
+
+
+/* ===== Homepage Upgrades ===== */
+
+/* Hero section gradient + subtle animation */
+.home-hero {
+  position: relative;
+  background: linear-gradient(135deg, #0f1217, #0c0f14);
+  padding: 40px 20px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.home-hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(102,219,255,0.08), transparent 70%);
+  animation: float-bg 12s linear infinite;
+  z-index: 0;
+}
+@keyframes float-bg {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.home-hero > * { position: relative; z-index: 1; }
+
+/* Hero text polish */
+.hero-copy h1 {
+  font-size: clamp(30px, 5vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #66dbff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Buttons hover */
+.btn.primary {
+  background: #66dbff;
+  color: #001018;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(102,219,255,0.25);
+}
+
+/* Value cards hover */
+.value-card {
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.value-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(102,219,255,.35);
+  box-shadow: 0 12px 28px rgba(0,0,0,.25);
+}
+
+/* Featured article hover */
+.f-card {
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.f-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(102,219,255,.35);
+  box-shadow: 0 14px 30px rgba(0,0,0,.3);
+}
