@@ -60,16 +60,22 @@
   </style>
 </head>
 <body id="top">
-  <!-- ===== Header + Hero on a distinct surface ===== -->
+  <!-- Sticky header lives OUTSIDE the top-surface so it sticks for the whole page -->
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="index.html">LaunchPad<span>for</span>GenZ</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Distinct top surface just for the hero (visual only) -->
   <div class="top-surface">
-    <header class="site-header">
-      <nav class="nav">
-        <a class="logo" href="index.html">LaunchPad<span>for</span>GenZ</a>
-        <a href="index.html" class="active">Home</a>
-        <a href="blog.html">Blog</a>
-        <a href="resources.html">Resources</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+    <section class="container home-hero">
+      <!-- (keep your existing hero content exactly as-is) -->
+
 
       <!-- Hero -->
       <section class="container home-hero">
