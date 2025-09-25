@@ -279,6 +279,21 @@
       };
       window.addEventListener('scroll', onScroll,{passive:true}); onScroll();
     })();
+
+  (function () {
+    const shell = document.querySelector('.lp-shell'); // the sticky hero box
+    const main = document.querySelector('main');       // the rest of the page
+    if (!shell || !main) return;
+
+    function adjust() {
+      main.style.paddingTop = shell.offsetHeight + 'px';
+    }
+
+    window.addEventListener('load', adjust);
+    window.addEventListener('resize', adjust);
+  })();
+
+
   </script>
 
   <!-- Back to top -->
