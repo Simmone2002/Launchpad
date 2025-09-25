@@ -126,39 +126,49 @@
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="container section">
-      <div class="section-head">
-        <h2>FAQs</h2>
-        <p class="muted">Short answers to keep you moving.</p>
-      </div>
-      <div class="faq-grid" id="faq">
-        <div class="faq-item">
-          <button class="faq-q" data-faq="faq1" aria-expanded="false">What is an LLM and how can it help?</button>
-          <div id="faq1" class="faq-a" hidden>
-            <p>An LLM drafts, edits, and helps you practice. Use it to tailor resumes, write letters, and rehearse interviews with feedback.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" data-faq="faq2" aria-expanded="false">Will AI make my resume sound fake?</button>
-          <div id="faq2" class="faq-a" hidden>
-            <p>No—if you feed real wins and numbers. Ask for a natural tone and always do a final human edit.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" data-faq="faq3" aria-expanded="false">How do I avoid ATS rejections?</button>
-          <div id="faq3" class="faq-a" hidden>
-            <p>Use standard headings, clean text (no tables for core content), and keywords from the job ad. Export to PDF unless asked for DOCX.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" data-faq="faq4" aria-expanded="false">What’s a simple weekly job search routine?</button>
-          <div id="faq4" class="faq-a" hidden>
-            <p>Mon–Tue: collect roles. Wed: tailor resume/letters. Thu: apply. Fri: follow-ups. Track everything in the sheet.</p>
-          </div>
+  <!-- FAQ -->
+<section class="container section">
+  <div class="section-head">
+    <h2>FAQs</h2>
+    <p class="muted">Short answers to keep you moving.</p>
+  </div>
+
+  <!-- Wrapper now has two independent columns -->
+  <div id="faq" class="faq-columns">
+    <div class="faq-col">
+      <div class="faq-item">
+        <button class="faq-q" data-faq="faq1" aria-expanded="false">What is an LLM and how can it help?</button>
+        <div id="faq1" class="faq-a" hidden>
+          <p>An LLM drafts, edits, and helps you practice. Use it to tailor resumes, write letters, and rehearse interviews with feedback.</p>
         </div>
       </div>
-    </section>
+
+      <div class="faq-item">
+        <button class="faq-q" data-faq="faq3" aria-expanded="false">How do I avoid ATS rejections?</button>
+        <div id="faq3" class="faq-a" hidden>
+          <p>Use standard headings, clean text (no tables for core content), and keywords from the job ad. Export to PDF unless asked for DOCX.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-col">
+      <div class="faq-item">
+        <button class="faq-q" data-faq="faq2" aria-expanded="false">Will AI make my resume sound fake?</button>
+        <div id="faq2" class="faq-a" hidden>
+          <p>No—if you feed real wins and numbers. Ask for a natural tone and always do a final human edit.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" data-faq="faq4" aria-expanded="false">What’s a simple weekly job search routine?</button>
+        <div id="faq4" class="faq-a" hidden>
+          <p>Mon–Tue: collect roles. Wed: tailor resume/letters. Thu: apply. Fri: follow-ups. Track everything in the sheet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
   </main>
 
   <footer class="site-footer">
