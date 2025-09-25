@@ -841,4 +841,76 @@ p.muted, .muted{ color:#aaa; }
 @media (max-width: 720px){
   .nav{ gap:12px; }
 }
+/* ===== FINAL header override: fixed, glassy, modern ===== */
+:root{
+  /* header height token so we can pad the page cleanly */
+  --hdr-h: 64px;
+}
+
+/* Make header fixed (more reliable than sticky across wrappers) */
+.site-header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: var(--hdr-h);
+  display: flex; align-items: center;
+  /* glass effect */
+  background: rgba(12,15,20,.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+/* Keep your nav spacing comfy inside the fixed header */
+.nav{
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;           /* remove big vertical padding; header sets height */
+  gap: 16px;
+}
+
+/* Push the page down so content isn't hidden under the fixed header */
+body{
+  padding-top: var(--hdr-h);
+}
+
+/* Subtle animated underline for active/hover */
+.nav a{
+  position: relative;
+  transition: opacity .15s ease;
+}
+.nav a::after{
+  content:"";
+  position:absolute;
+  left:10%;
+  right:10%;
+  bottom:-8px;
+  height:2px;
+  border-radius:999px;
+  background: linear-gradient(90deg, rgba(102,219,255,0), rgba(102,219,255,.9), rgba(102,219,255,0));
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .18s ease;
+}
+.nav a:hover::after,
+.nav a.active::after{
+  transform: scaleX(1);
+}
+
+/* Make the hero’s top block look a bit richer under the glass header */
+.top-surface{
+  padding-top: 6px; /* tiny breathing room below the header line */
+  background:
+    radial-gradient(1200px 260px at 20% 0%, rgba(102,219,255,.10), transparent 55%),
+    radial-gradient(900px 200px at 85% -10%, rgba(102,219,255,.06), transparent 60%),
+    #0c0f14;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+/* Small screens: keep links readable inside a shorter fixed header */
+@media (max-width: 720px){
+  :root{ --hdr-h: 58px; }
+  .nav{ gap: 12px; }
+}
 
