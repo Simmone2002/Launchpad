@@ -693,6 +693,25 @@ p.muted, .muted{ color:#aaa; }
 .faq-q[aria-expanded="true"]{ background:#0f1217; }
 .faq-a{ padding:0 14px 14px; }
 
+/* FAQ columns layout (prevents both cards in a row from stretching together) */
+.faq-columns{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+  align-items:start; /* important: don't stretch */
+}
+.faq-col{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+/* You can keep your existing .faq-item/.faq-q/.faq-a styles */
+@media (max-width: 1000px){
+  .faq-columns{ grid-template-columns: 1fr; }
+}
+
+
 /* Footer */
 .site-footer{ background:#0f1217; padding:30px 0; margin-top:40px; }
 .footer-grid{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; }
