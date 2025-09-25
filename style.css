@@ -626,7 +626,7 @@ html {
   @media (max-width: 1000px){
     .pro-hero{ grid-template-columns: 1fr; }
     .value-grid.pro{ grid-template-columns: 1fr 1fr; }
-    .feature-grid.pro{ grid-template-columns: 1fr 1fr; }
+    .feature-grid.pro{ grid-template-columns: 1 fr 1fr; }
     .faq-grid{ grid-template-columns: 1fr; }
   }
   @media (max-width: 640px){
@@ -799,6 +799,7 @@ p.muted, .muted{ color:#aaa; }
   border-color: rgba(102,219,255,.35);
   box-shadow: 0 14px 30px rgba(0,0,0,.3);
 }
+
 
 
 
