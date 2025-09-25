@@ -800,4 +800,45 @@ p.muted, .muted{ color:#aaa; }
   box-shadow: 0 14px 30px rgba(0,0,0,.3);
 }
 
+/* ===== Sticky glass header polish ===== */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(12,15,20,.65); /* glassy */
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+/* subtle hover/active underline */
+.nav a{
+  position: relative;
+  transition: opacity .15s ease;
+}
+.nav a::after{
+  content:"";
+  position:absolute;
+  left:10%;
+  right:10%;
+  bottom:-6px;
+  height:2px;
+  border-radius:999px;
+  background: linear-gradient(90deg, rgba(102,219,255,.0), rgba(102,219,255,.9), rgba(102,219,255,.0));
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .18s ease;
+}
+.nav a:hover::after,
+.nav a.active::after{
+  transform: scaleX(1);
+}
+
+/* stronger active link */
+.nav a.active{ opacity:1; }
+
+/* keep nav spacing comfy on small screens */
+@media (max-width: 720px){
+  .nav{ gap:12px; }
+}
 
