@@ -1,7 +1,3 @@
-
-
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,8 +20,7 @@
     }
     .sparkle{
       position:absolute; width:6px; height:6px; border-radius:50%;
-      background:rgba(102,219,255,.7);
-      animation: float 12s linear infinite;
+      background:rgba(102,219,255,.7); animation: float 12s linear infinite;
     }
     .sparkle:nth-child(1){ top:20%; left:15%; animation-duration: 18s; }
     .sparkle:nth-child(2){ top:40%; left:70%; animation-duration: 22s; }
@@ -39,10 +34,11 @@
     }
 
     /* ===== Hero text ===== */
-    .lp-hero{ display:grid; gap:26px; padding:40px 0 14px; grid-template-columns:1.25fr .75fr; }
+    .lp-hero{
+      display:grid; gap:26px; padding:40px 0 14px; grid-template-columns:1.25fr .75fr;
+    }
     .lp-hero h1{
-      font-size: clamp(30px,5vw,48px);
-      margin:0 0 10px; line-height:1.08; letter-spacing:-0.01em;
+      font-size: clamp(30px,5vw,48px); margin:0 0 10px; line-height:1.08; letter-spacing:-0.01em;
     }
     .hi{ position:relative; display:inline-block; }
     .hi::after{
@@ -62,17 +58,17 @@
     /* ===== Smooth underline links ===== */
     .link{ position:relative; }
     .link::after{
-      content:""; position:absolute; left:0; bottom:-2px; width:100%; height:2px;
-      background: var(--accent); transform: scaleX(0); transform-origin:right;
-      transition: transform .2s ease;
+      content:""; position:absolute; left:0; bottom:-2px; width:100%; height:2px; background: var(--accent);
+      transform: scaleX(0); transform-origin:right; transition: transform .2s ease;
     }
     .link:hover::after{ transform: scaleX(1); transform-origin:left; }
 
-    @media(max-width:1000px){ .lp-hero{ grid-template-columns:1fr; } }
+    @media(max-width:1000px){
+      .lp-hero{ grid-template-columns:1fr; }
+    }
   </style>
 </head>
 <body id="top">
-
   <!-- Sparkly top hero -->
   <div class="lp-shell">
     <!-- sparkles -->
@@ -96,8 +92,7 @@
         <div>
           <h1><span class="hi">Land offers faster</span> with clear, AI-smart tactics</h1>
           <p class="muted">
-            Resume bullets that show impact, cover letters that sound like you, and
-            a weekly system you can actually keep.
+            Resume bullets that show impact, cover letters that sound like you, and a weekly system you can actually keep.
           </p>
           <div class="hero-cta">
             <a class="btn primary" href="resources.html">Get the free resources</a>
@@ -167,6 +162,7 @@
             <a class="cta" href="posts/post-1.html">Read more →</a>
           </div>
         </article>
+
         <article class="f-card">
           <img class="f-thumb" src="images/job.jpg" alt="Cover letters with AI">
           <div class="f-body">
@@ -175,6 +171,7 @@
             <a class="cta" href="posts/post-2.html">Read more →</a>
           </div>
         </article>
+
         <article class="f-card">
           <img class="f-thumb" src="images/interview.jpg" alt="Interview prep">
           <div class="f-body">
@@ -200,25 +197,37 @@
     <!-- FAQs -->
     <section class="container section">
       <div class="section-head"><h2>FAQs</h2><p class="muted">Short answers to keep you moving.</p></div>
+
       <div id="faq" class="faq-columns">
         <div class="faq-col">
           <div class="faq-item">
             <button class="faq-q" data-faq="faq1" aria-expanded="false">What is an LLM and how can it help?</button>
-            <div id="faq1" class="faq-a" hidden><p>An LLM drafts, edits, and helps you practice. Use it to tailor resumes, write letters, and rehearse interviews with feedback.</p></div>
+            <div id="faq1" class="faq-a" hidden>
+              <p>An LLM drafts, edits, and helps you practice. Use it to tailor resumes, write letters, and rehearse interviews with feedback.</p>
+            </div>
           </div>
+
           <div class="faq-item">
             <button class="faq-q" data-faq="faq3" aria-expanded="false">How do I avoid ATS rejections?</button>
-            <div id="faq3" class="faq-a" hidden><p>Use standard headings, clean text, and keywords from the job ad. Export to PDF unless asked for DOCX.</p></div>
+            <div id="faq3" class="faq-a" hidden>
+              <p>Use standard headings, clean text, and keywords from the job ad. Export to PDF unless asked for DOCX.</p>
+            </div>
           </div>
         </div>
+
         <div class="faq-col">
           <div class="faq-item">
             <button class="faq-q" data-faq="faq2" aria-expanded="false">Will AI make my resume sound fake?</button>
-            <div id="faq2" class="faq-a" hidden><p>No—if you feed real wins and numbers. Ask for a natural tone and always do a final human edit.</p></div>
+            <div id="faq2" class="faq-a" hidden>
+              <p>No—if you feed real wins and numbers. Ask for a natural tone and always do a final human edit.</p>
+            </div>
           </div>
+
           <div class="faq-item">
             <button class="faq-q" data-faq="faq4" aria-expanded="false">What’s a simple weekly job search routine?</button>
-            <div id="faq4" class="faq-a" hidden><p>Mon–Tue: collect roles. Wed: tailor resume/letters. Thu: apply. Fri: follow-ups. Track everything in the sheet.</p></div>
+            <div id="faq4" class="faq-a" hidden>
+              <p>Mon–Tue: collect roles. Wed: tailor resume/letters. Thu: apply. Fri: follow-ups. Track everything in the sheet.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -248,8 +257,10 @@
       const grid=document.getElementById('faq');
       if(!grid) return;
       grid.addEventListener('click',(e)=>{
-        const btn=e.target.closest('.faq-q'); if(!btn) return;
-        const id=btn.dataset.faq; const panel=document.getElementById(id);
+        const btn=e.target.closest('.faq-q');
+        if(!btn) return;
+        const id=btn.dataset.faq;
+        const panel=document.getElementById(id);
         const isOpen=btn.getAttribute('aria-expanded')==='true';
         grid.querySelectorAll('.faq-q').forEach(b=>b.setAttribute('aria-expanded','false'));
         grid.querySelectorAll('.faq-a').forEach(p=>p.hidden=true);
@@ -261,13 +272,20 @@
     (function(){
       document.querySelectorAll('pre').forEach(pre=>{
         const btn=document.createElement('button');
-        btn.className='copy-btn'; btn.textContent='Copy';
+        btn.className='copy-btn';
+        btn.textContent='Copy';
         btn.addEventListener('click',async()=>{
-          try{ await navigator.clipboard.writeText(pre.innerText);
-            btn.textContent='Copied!'; setTimeout(()=>btn.textContent='Copy',1200);
-          }catch{ btn.textContent='Error'; setTimeout(()=>btn.textContent='Copy',1200);}
+          try{
+            await navigator.clipboard.writeText(pre.innerText);
+            btn.textContent='Copied!';
+            setTimeout(()=>btn.textContent='Copy',1200);
+          }catch{
+            btn.textContent='Error';
+            setTimeout(()=>btn.textContent='Copy',1200);
+          }
         });
-        pre.style.position='relative'; pre.appendChild(btn);
+        pre.style.position='relative';
+        pre.appendChild(btn);
       });
     })();
 
@@ -275,11 +293,13 @@
     (function(){
       const hdr=document.querySelector('.site-header');
       const topBtn=document.getElementById('to-top');
-      const onScroll=()=>{ const y=window.scrollY;
+      const onScroll=()=>{
+        const y=window.scrollY;
         if(hdr) hdr.classList.toggle('scrolled', y>6);
         if(topBtn) topBtn.classList.toggle('show', y>400);
       };
-      window.addEventListener('scroll', onScroll,{passive:true}); onScroll();
+      window.addEventListener('scroll', onScroll,{passive:true});
+      onScroll();
     })();
   </script>
 
@@ -287,6 +307,7 @@
   <a id="to-top" class="btn ghost" href="#top">↑ Top</a>
 </body>
 </html>
+
 
 
 
