@@ -4,72 +4,131 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LaunchPad for GenZ</title>
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css" />
 
+  <!-- Page-local polish (safe: doesn't modify your global CSS file) -->
+  <style>
+    /* ----- Distinct top surface (only for the header + hero) ----- */
+    .top-surface{
+      background:
+        radial-gradient(1200px 260px at 20% 0%, rgba(102,219,255,.10), transparent 55%),
+        radial-gradient(900px 200px at 85% -10%, rgba(102,219,255,.06), transparent 60%),
+        #0c0f14;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .top-surface .container{ padding-bottom: 8px; }
+
+    /* subtle divider after the hero */
+    .soft-divider{
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent);
+      margin: 10px 0 0;
+    }
+
+    /* trust / logo strip */
+    .logo-strip{
+      display:flex; gap:20px; align-items:center; flex-wrap:wrap;
+      opacity:.75; padding:10px 0 2px;
+      font-size:.92rem;
+    }
+    .logo-chip{
+      border:1px solid var(--line); border-radius:999px; padding:6px 10px;
+      background:#0f1217; color:#9aa0a6;
+    }
+
+    /* hero micro KPIs (chips) */
+    .kpi-row{ display:flex; gap:8px; flex-wrap:wrap; margin-top:6px; }
+    .kpi-chip{
+      border:1px solid var(--line); border-radius:10px; padding:6px 10px;
+      background:#0f1217; color:#9aa0a6; font-size:.9rem;
+    }
+
+    /* hover niceties */
+    .link:hover{ text-decoration: underline; }
+    .value-card:hover .v-icon{ box-shadow: 0 8px 18px rgba(0,0,0,.24); }
+
+    /* small spacing tune-ups */
+    .feature-grid{ margin-top: 6px; }
+    .cta-wide{ margin-top: 2px; }
+    .faq-columns{ margin-top: 8px; }
+
+    /* responsive tweaks for the new elements */
+    @media (max-width: 900px){
+      .logo-strip{ gap:10px; }
+      .logo-chip{ font-size:.85rem; }
+    }
+  </style>
 </head>
 <body id="top">
-  <!-- Sparkly top hero -->
-  <div class="lp-shell">
-    <!-- sparkles -->
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-
+  <!-- ===== Header + Hero on a distinct surface ===== -->
+  <div class="top-surface">
     <header class="site-header">
-  <nav class="nav container">
-    <a class="logo" href="index.html">LaunchPad<span>for</span>GenZ</a>
-    <a href="index.html" class="active">Home</a>
-    <a href="blog.html">Blog</a>
-    <a href="resources.html">Resources</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+      <nav class="nav">
+        <a class="logo" href="index.html">LaunchPad<span>for</span>GenZ</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
-  <!-- Hero (clean + stable) -->
-  <section class="container home-hero">
-    <div class="hero-copy">
-      <h1><span class="hi">Land offers faster</span> with clear, AI-smart tactics</h1>
-      <p class="muted">
-        Resume bullets that show impact, cover letters that sound like you, and
-        a weekly system you can actually keep.
-      </p>
-      <div class="hero-cta">
-        <a class="btn primary" href="resources.html">Get the free resources</a>
-        <a class="btn ghost" href="blog.html">Read the playbook</a>
-      </div>
-      <div class="micro-proof">
-        <div class="dots" aria-hidden="true"></div>
-        <span class="tiny muted">Used by job seekers across design, marketing, and tech.</span>
-      </div>
-    </div>
+      <!-- Hero -->
+      <section class="container home-hero">
+        <div class="hero-copy">
+          <h1>Land jobs faster with clear, AI-smart tactics</h1>
+          <p class="muted">
+            Resume bullets that show impact, cover letters that sound like you, and a weekly system you can actually keep.
+          </p>
+          <div class="hero-cta">
+            <a class="btn primary" href="resources.html">Get the free resources</a>
+            <a class="btn ghost" href="blog.html">Read the playbook</a>
+          </div>
 
-    <aside class="hero-card">
-      <div class="hc-row">
-        <div class="hc-pill">Resume</div>
-        <div class="hc-pill">Cover letter</div>
-        <div class="hc-pill">Interview</div>
-      </div>
-      <div class="hc-box">
-        <p class="tiny muted">Quick win</p>
-        <p class="hc-big">Turn tasks → impact bullets</p>
-        <a class="link" href="posts/post-1.html">See how</a>
-      </div>
-      <div class="hc-box">
-        <p class="tiny muted">Practice</p>
-        <p class="hc-big">STAR answers in 10 minutes</p>
-        <a class="link" href="posts/post-3.html">Try it</a>
-      </div>
-    </aside>
-  </section>
-</header>
+          <!-- mini metrics / proof -->
+          <div class="kpi-row">
+            <div class="kpi-chip">✨ ATS-friendly resume layout</div>
+            <div class="kpi-chip">🧠 Non-cringe AI prompts</div>
+            <div class="kpi-chip">⏱ 10-min interview drills</div>
+          </div>
 
+          <!-- subtle "used by" row -->
+          <div class="logo-strip">
+            <span class="tiny muted">Used by job seekers across</span>
+            <span class="logo-chip">Design</span>
+            <span class="logo-chip">Marketing</span>
+            <span class="logo-chip">Product</span>
+            <span class="logo-chip">CX</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hc-row">
+            <div class="hc-pill">Resume</div>
+            <div class="hc-pill">Cover letter</div>
+            <div class="hc-pill">Interview</div>
+          </div>
+          <div class="hc-box">
+            <p class="tiny muted">Quick win</p>
+            <p class="hc-big">Turn tasks → impact bullets</p>
+            <a class="link" href="posts/post-1.html">See how</a>
+          </div>
+          <div class="hc-box">
+            <p class="tiny muted">Practice</p>
+            <p class="hc-big">STAR answers in 10 minutes</p>
+            <a class="link" href="posts/post-3.html">Try it</a>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <div class="soft-divider" aria-hidden="true"></div>
   </div>
 
   <main>
-    <!-- Value section -->
+    <!-- Value / Why this site -->
     <section class="container section">
-      <div class="section-head"><h2>What you’ll get</h2></div>
+      <div class="section-head">
+        <h2>What you’ll get</h2>
+      </div>
       <div class="value-grid">
         <article class="value-card">
           <div class="v-icon">📄</div>
@@ -92,7 +151,7 @@
       </div>
     </section>
 
-    <!-- Featured -->
+    <!-- Featured Articles -->
     <section class="container section">
       <div class="section-head">
         <h2>Featured articles</h2>
@@ -137,28 +196,44 @@
       </div>
     </section>
 
-    <!-- FAQs -->
+    <!-- FAQs (already using the single-open system) -->
     <section class="container section">
-      <div class="section-head"><h2>FAQs</h2><p class="muted">Short answers to keep you moving.</p></div>
+      <div class="section-head">
+        <h2>FAQs</h2>
+        <p class="muted">Short answers to keep you moving.</p>
+      </div>
+
+      <!-- Two independent vertical columns (prevents “both opened” appearance) -->
       <div id="faq" class="faq-columns">
         <div class="faq-col">
           <div class="faq-item">
             <button class="faq-q" data-faq="faq1" aria-expanded="false">What is an LLM and how can it help?</button>
-            <div id="faq1" class="faq-a" hidden><p>An LLM drafts, edits, and helps you practice. Use it to tailor resumes, write letters, and rehearse interviews with feedback.</p></div>
+            <div id="faq1" class="faq-a" hidden>
+              <p>An LLM drafts, edits, and helps you practice. Use it to tailor resumes, write letters, and rehearse interviews with feedback.</p>
+            </div>
           </div>
+
           <div class="faq-item">
             <button class="faq-q" data-faq="faq3" aria-expanded="false">How do I avoid ATS rejections?</button>
-            <div id="faq3" class="faq-a" hidden><p>Use standard headings, clean text, and keywords from the job ad. Export to PDF unless asked for DOCX.</p></div>
+            <div id="faq3" class="faq-a" hidden>
+              <p>Use standard headings, clean text (no tables for core content), and keywords from the job ad. Export to PDF unless asked for DOCX.</p>
+            </div>
           </div>
         </div>
+
         <div class="faq-col">
           <div class="faq-item">
             <button class="faq-q" data-faq="faq2" aria-expanded="false">Will AI make my resume sound fake?</button>
-            <div id="faq2" class="faq-a" hidden><p>No—if you feed real wins and numbers. Ask for a natural tone and always do a final human edit.</p></div>
+            <div id="faq2" class="faq-a" hidden>
+              <p>No—if you feed real wins and numbers. Ask for a natural tone and always do a final human edit.</p>
+            </div>
           </div>
+
           <div class="faq-item">
             <button class="faq-q" data-faq="faq4" aria-expanded="false">What’s a simple weekly job search routine?</button>
-            <div id="faq4" class="faq-a" hidden><p>Mon–Tue: collect roles. Wed: tailor resume/letters. Thu: apply. Fri: follow-ups. Track everything in the sheet.</p></div>
+            <div id="faq4" class="faq-a" hidden>
+              <p>Mon–Tue: collect roles. Wed: tailor resume/letters. Thu: apply. Fri: follow-ups. Track everything in the sheet.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -181,52 +256,63 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Scripts (unchanged) -->
   <script>
-    // FAQ accordion
+    // FAQ accordion single-open
     (function(){
-      const grid=document.getElementById('faq');
+      const grid = document.getElementById('faq');
       if(!grid) return;
-      grid.addEventListener('click',(e)=>{
-        const btn=e.target.closest('.faq-q'); if(!btn) return;
-        const id=btn.dataset.faq; const panel=document.getElementById(id);
-        const isOpen=btn.getAttribute('aria-expanded')==='true';
-        grid.querySelectorAll('.faq-q').forEach(b=>b.setAttribute('aria-expanded','false'));
-        grid.querySelectorAll('.faq-a').forEach(p=>p.hidden=true);
-        if(!isOpen){ btn.setAttribute('aria-expanded','true'); panel.hidden=false; }
+      grid.addEventListener('click', (e) => {
+        const btn = e.target.closest('.faq-q');
+        if(!btn) return;
+        const id = btn.dataset.faq;
+        const panel = document.getElementById(id);
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        grid.querySelectorAll('.faq-q').forEach(b => b.setAttribute('aria-expanded','false'));
+        grid.querySelectorAll('.faq-a').forEach(p => p.hidden = true);
+        if(!isOpen){ btn.setAttribute('aria-expanded','true'); panel.hidden = false; }
       });
     })();
 
-    // Copy buttons
+    // Copy buttons for <pre>
     (function(){
-      document.querySelectorAll('pre').forEach(pre=>{
-        const btn=document.createElement('button');
-        btn.className='copy-btn'; btn.textContent='Copy';
-        btn.addEventListener('click',async()=>{
-          try{ await navigator.clipboard.writeText(pre.innerText);
-            btn.textContent='Copied!'; setTimeout(()=>btn.textContent='Copy',1200);
-          }catch{ btn.textContent='Error'; setTimeout(()=>btn.textContent='Copy',1200);}
+      const pres = document.querySelectorAll('pre');
+      pres.forEach(pre => {
+        const btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.type = 'button';
+        btn.textContent = 'Copy';
+        btn.addEventListener('click', async () => {
+          try{
+            await navigator.clipboard.writeText(pre.innerText);
+            btn.textContent = 'Copied!';
+            setTimeout(()=> btn.textContent = 'Copy', 1200);
+          }catch{ btn.textContent = 'Error'; setTimeout(()=> btn.textContent = 'Copy', 1200); }
         });
-        pre.style.position='relative'; pre.appendChild(btn);
+        pre.style.position = 'relative';
+        pre.appendChild(btn);
       });
     })();
 
     // Header shadow + Back to top
     (function(){
-      const hdr=document.querySelector('.site-header');
-      const topBtn=document.getElementById('to-top');
-      const onScroll=()=>{ const y=window.scrollY;
-        if(hdr) hdr.classList.toggle('scrolled', y>6);
-        if(topBtn) topBtn.classList.toggle('show', y>400);
+      const hdr = document.querySelector('.site-header');
+      const topBtn = document.getElementById('to-top');
+      const onScroll = () => {
+        const y = window.scrollY;
+        if(hdr) hdr.classList.toggle('scrolled', y > 6);
+        if(topBtn) topBtn.classList.toggle('show', y > 400);
       };
-      window.addEventListener('scroll', onScroll,{passive:true}); onScroll();
+      window.addEventListener('scroll', onScroll, {passive:true});
+      onScroll();
     })();
   </script>
 
   <!-- Back to top -->
-  <a id="to-top" class="btn ghost" href="#top">↑ Top</a>
+  <a id="to-top" class="btn ghost" href="#top" aria-label="Back to top">↑ Top</a>
 </body>
 </html>
+
 
 
 
