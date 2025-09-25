@@ -914,3 +914,33 @@ body{
   .nav{ gap: 12px; }
 }
 
+/* === HERO: horizontal + tighter === */
+.home-hero{
+  grid-template-columns: 1.15fr .85fr; /* more horizontal split */
+  align-items: center;                  /* center vertically */
+  gap: 24px;
+  padding: 22px 0 6px;                  /* tighter vertical space */
+}
+
+/* tighten hero text stack a bit */
+.hero-copy h1{ margin: 0 0 6px; }
+.hero-copy .muted{ margin: 0 0 10px; }
+.hero-cta{ gap: 8px; }
+
+/* keep the right column compact and aligned to the right */
+.hero-card{
+  max-width: 520px;
+  justify-self: end; /* pushes the card to the right side neatly */
+  gap: 10px;
+}
+
+/* small devices: fall back to single column cleanly */
+@media (max-width: 900px){
+  .home-hero{
+    grid-template-columns: 1fr;
+    align-items: start;
+    padding-top: 14px;
+  }
+  .hero-card{ justify-self: stretch; max-width: none; }
+}
+
